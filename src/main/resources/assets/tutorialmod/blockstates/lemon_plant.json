@@ -1,0 +1,13 @@
+{
+    "variants":
+    {
+        "age=0": { "model": "tutorialmod:lemon_plant0" },
+        "age=1": { "model": "tutorialmod:lemon_plant1" },
+        "age=2": { "model": "tutorialmod:lemon_plant2" },
+        "age=3": { "model": "tutorialmod:lemon_plant3" },
+        "age=4": { "model": "tutorialmod:lemon_plant4" },
+        "age=5": { "model": "tutorialmod:lemon_plant5" },
+        "age=6": { "model": "tutorialmod:lemon_plant6" },
+        "age=7": { "model": "tutorialmod:lemon_plant7" }
+    }
+}

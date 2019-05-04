@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/door_top_rh",
+    "textures": {
+        "bottom": "tutorialmod:blocks/door_glass_lower",
+        "top": "tutorialmod:blocks/door_glass_upper"
+    }
+}

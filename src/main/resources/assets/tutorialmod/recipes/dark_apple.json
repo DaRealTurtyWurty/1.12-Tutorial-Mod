@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "III",
+        "IAI",
+        "III"
+    ],
+    
+    "key":
+    {
+        "I":
+        {
+            "item": "tutorialmod:obsidian_ingot"
+        },
+        
+        "A":
+        {
+            "item": "minecraft:apple"
+        }
+    },
+    
+    "result":
+    {
+        "item":  "tutorialmod:dark_apple",
+        "count": 1
+    }
+}

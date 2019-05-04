@@ -1,0 +1,22 @@
+{
+    "entity.test.test_ambient":
+    {
+        "category": "entity",
+        "subtitle": "entity.test.test_ambient",
+        "sounds": [{ "name": "tutorialmod:entity/test/test_ambient", "stream": true }]
+    },
+    
+    "entity.test.test_hurt":
+    {
+        "category": "entity",
+        "subtitle": "entity.test.test_hurt",
+        "sounds": [{ "name": "tutorialmod:entity/test/test_hurt", "stream": true }]
+    },
+    
+    "entity.test.test_death":
+    {
+        "category": "entity",
+        "subtitle": "entity.test.test_death",
+        "sounds": [{ "name": "tutorialmod:entity/test/test_death", "stream": true }]
+    }
+}

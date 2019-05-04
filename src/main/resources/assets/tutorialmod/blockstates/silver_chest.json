@@ -1,0 +1,29 @@
+{
+    "variants": 
+    {
+        "facing=up": 
+        { 
+            "model": "tutorialmod:silver_chest" 
+        },
+    
+        "facing=south": 
+        { 
+            "model": "tutorialmod:silver_chest" 
+        },
+    
+        "facing=east": 
+        { 
+            "model": "tutorialmod:silver_chest","y":270 
+        },
+    
+        "facing=west": 
+        { 
+            "model": "tutorialmod:silver_chest","y":90 
+        },
+    
+        "facing=north": 
+        { 
+            "model": "tutorialmod:silver_chest","y":180 
+        }
+    }
+}

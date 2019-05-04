@@ -1,0 +1,54 @@
+//Items
+item.obsidian_ingot.name=Obsidian Ingot
+item.obsidian_nugget.name=Obsidian Nugget
+item.silver_ingot.name=Silver Ingot
+item.silver_nugget.name=Silver Nugget
+item.radioactive_coal.name=Radioactive Coal
+item.dark_apple.name=Dark Apple
+item.uranium_ingot.name=Uranium Ingot
+item.uranium_nugget.name=Uranium Nugget
+item.ruby_apple.name=Ruby Apple
+item.lemon_seeds.name=Lemon Seeds
+item.magiball.name=Magiball
+item.diamond_bow.name=Diamond Bow
+item.diamond_arrow.name=Diamond Arrow
+
+//Armor
+item.helmet_ruby.name=Ruby Helmet
+item.chestplate_ruby.name=Ruby Chestplate
+item.leggings_ruby.name=Ruby Leggings
+item.boots_ruby.name=Ruby Boots
+
+//Tools
+item.ruby_sword.name=Ruby Sword
+item.ruby_pickaxe.name=Ruby Pickaxe
+item.ruby_shovel.name=Ruby Shovel
+item.ruby_axe.name=Ruby Axe
+item.ruby_hoe.name=Ruby Hoe
+
+//Blocks
+tile.silver_block.name=Silver Block
+tile.random_block.name=Random Block
+tile.candy_cane.name=Candy Cane
+tile.silver_chest.name=Silver Chest
+tile.glass_door.name=Glass Door
+tile.silver_chest.name=Silver Chest
+tile.silver_chest_na.name=Silver Chest NA
+tile.silver_furnace_off.name=Silver Furnace
+tile.silver_furnace_on.name=Lit Silver Furnace
+
+//Tabs
+itemGroup.tutorialmodtab=Tutorial Tab
+
+//Containers
+container.sliver_chest=Silver Chest
+container.silver_chest_na=          Silver Chest NA
+container.silver_furnace=Silver Furnace
+
+//Staffs
+item.large_fireball_staff.name=Large Fireball Staff
+item.lightning_staff.name=Lightning Staff
+
+//Entities
+entity.test.name=Test
+entity.diamond_arrow.name=Diamond Arrow

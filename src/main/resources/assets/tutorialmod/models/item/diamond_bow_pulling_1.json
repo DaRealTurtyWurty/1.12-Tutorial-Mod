@@ -1,0 +1,7 @@
+{
+    "parent": "item/bow",
+    "textures": 
+    {
+        "layer0": "tutorialmod:items/diamond_bow_1"
+    }
+}

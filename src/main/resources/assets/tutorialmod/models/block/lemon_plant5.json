@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "tutorialmod:blocks/lemon_plant5"
+    }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tutorialmod",
+  "name": "Tutorial Mod",
+  "description": "A Minecraft Modding 1.12.2 Tutorial Series on YouTube!",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "url": "https://www.youtube.com/channel/UCicAXLV4w2X6bn2EuM4To4w?view_as=subscriber",
+  "updateUrl": "",
+  "authorList": ["TurtyWurty(me)"],
+  "credits": "My subscribers!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

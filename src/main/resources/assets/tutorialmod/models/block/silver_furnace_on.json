@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "tutorialmod:blocks/silver_furnace_top",
+        "front": "tutorialmod:blocks/silver_furnace_front_on",
+        "side": "tutorialmod:blocks/silver_furnace_side"
+    }
+}
