@@ -3,6 +3,7 @@ package com.tutorialmod.turtywurty.util.handlers;
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.EntityInit;
+import com.tutorialmod.turtywurty.init.FluidInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
 import com.tutorialmod.turtywurty.init.OreDictionaryInit;
 import com.tutorialmod.turtywurty.objects.blocks.silver_chest.RenderSilverChest;
@@ -63,6 +64,8 @@ public class RegistryHandler
 	
 	public static void preInitRegistries()
 	{
+		FluidInit.registerFluids();
+		RenderHandler.registerCustomMeshesAndStates();
 		GameRegistry.registerWorldGenerator(new WorldGenOres(), 3);
 		EntityInit.registerEntities();
 		RenderHandler.registerEntityRenders();

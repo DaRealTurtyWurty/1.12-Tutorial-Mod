@@ -13,6 +13,9 @@ item.magiball.name=Magiball
 item.diamond_bow.name=Diamond Bow
 item.diamond_arrow.name=Diamond Arrow
 
+//Fluids
+fluid.white_water=White Water
+
 //Armor
 item.helmet_ruby.name=Ruby Helmet
 item.chestplate_ruby.name=Ruby Chestplate

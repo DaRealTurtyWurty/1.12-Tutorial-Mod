@@ -9,6 +9,7 @@ import com.tutorialmod.turtywurty.util.handlers.RegistryHandler;
 import com.tutorialmod.turtywurty.world.gen.WorldGenOres;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -29,6 +30,11 @@ public class TutorialMod
 	public static CommonProxy proxy;
 	
 	public static final CreativeTabs TUTORIALMODTAB = new TutorialTab("tutorialtab");
+	
+	static
+	{
+		FluidRegistry.enableUniversalBucket();
+	}
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
