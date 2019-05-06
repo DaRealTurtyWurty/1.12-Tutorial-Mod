@@ -17,6 +17,6 @@
     {
         "category": "entity",
         "subtitle": "entity.test.test_death",
-        "sounds": [{ "name": "tutorialmod:entity/test/test_death", "stream": true }]
+        "sounds": [{ "name": "tutorialmod:entity/test/test_death", "stream": true}]
     }
 }
