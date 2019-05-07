@@ -6,7 +6,6 @@ import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
 import com.tutorialmod.turtywurty.objects.blocks.item.ItemBlockDoor;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
@@ -21,7 +20,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class GlassDoor extends BlockDoor implements IHasModel 
+public class GlassDoor extends BlockDoor 
 {
 	protected static final AxisAlignedBB SOUTH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.1875D);
     protected static final AxisAlignedBB NORTH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.8125D, 1.0D, 1.0D, 1.0D);
@@ -40,12 +39,6 @@ public class GlassDoor extends BlockDoor implements IHasModel
 	
 		BlockInit.BLOCKS.add(this);
 		ItemInit.ITEMS.add(new ItemBlockDoor(this).setRegistryName(this.getRegistryName()));
-    }
-    
-    @Override
-    public void registerModels() 
-    {
-    	TutorialMod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
     
     @Override

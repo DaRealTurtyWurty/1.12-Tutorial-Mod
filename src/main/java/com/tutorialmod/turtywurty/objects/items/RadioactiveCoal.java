@@ -2,12 +2,11 @@ package com.tutorialmod.turtywurty.objects.items;
 
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class RadioactiveCoal extends Item implements IHasModel
+public class RadioactiveCoal extends Item
 {
 	public RadioactiveCoal(String name) 
 	{
@@ -22,11 +21,5 @@ public class RadioactiveCoal extends Item implements IHasModel
 	public int getItemBurnTime(ItemStack itemStack) 
 	{
 		return 3000;
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 }

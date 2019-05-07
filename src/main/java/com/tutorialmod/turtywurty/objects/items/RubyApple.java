@@ -2,7 +2,6 @@ package com.tutorialmod.turtywurty.objects.items;
 
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
@@ -11,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class RubyApple extends ItemFood implements IHasModel 
+public class RubyApple extends ItemFood
 {
 	public RubyApple(String name, int amount, float saturation, boolean isWolfFood) 
 	{
@@ -38,11 +37,5 @@ public class RubyApple extends ItemFood implements IHasModel
 		entityLiving.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 3000, 5, false, false));
 		entityLiving.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 3000, 10, false, false));
 		return super.onItemUseFinish(stack, worldIn, entityLiving);
-	}
-
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 }

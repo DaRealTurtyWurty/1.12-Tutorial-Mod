@@ -2,11 +2,10 @@ package com.tutorialmod.turtywurty.objects.items.tools;
 
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.item.ItemSword;
 
-public class ToolSword extends ItemSword implements IHasModel 
+public class ToolSword extends ItemSword
 {
 	public ToolSword(String name, ToolMaterial material) 
 	{
@@ -16,11 +15,5 @@ public class ToolSword extends ItemSword implements IHasModel
 		setCreativeTab(TutorialMod.TUTORIALMODTAB);
 		
 		ItemInit.ITEMS.add(this);
-	}
-
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 }

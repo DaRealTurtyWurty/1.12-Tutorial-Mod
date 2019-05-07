@@ -1,19 +1,11 @@
 package com.tutorialmod.turtywurty.objects.items;
 
 import com.tutorialmod.turtywurty.TutorialMod;
-import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumHand;
-import net.minecraft.world.World;
 
-public class ItemBase extends Item implements IHasModel 
+public class ItemBase extends Item
 {
 	public ItemBase(String name) 
 	{
@@ -22,11 +14,5 @@ public class ItemBase extends Item implements IHasModel
 		setCreativeTab(TutorialMod.TUTORIALMODTAB);
 		
 		ItemInit.ITEMS.add(this);
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 }

@@ -2,7 +2,6 @@ package com.tutorialmod.turtywurty.objects.items.staffs;
 
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityLargeFireball;
@@ -12,10 +11,9 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.village.VillageCollection;
 import net.minecraft.world.World;
 
-public class LargeFireballStaff extends Item implements IHasModel 
+public class LargeFireballStaff extends Item
 {
 	public LargeFireballStaff(String name) 
 	{
@@ -41,11 +39,5 @@ public class LargeFireballStaff extends Item implements IHasModel
 		playerIn.getCooldownTracker().setCooldown(this, 30);
 		worldIn.spawnEntity(largeFireball);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 }

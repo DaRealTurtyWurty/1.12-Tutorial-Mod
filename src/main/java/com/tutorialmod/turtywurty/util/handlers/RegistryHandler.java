@@ -10,7 +10,6 @@ import com.tutorialmod.turtywurty.objects.blocks.silver_chest.RenderSilverChest;
 import com.tutorialmod.turtywurty.objects.blocks.silver_chest.TileEntitySilverChest;
 import com.tutorialmod.turtywurty.recipes.CraftingRecipes;
 import com.tutorialmod.turtywurty.recipes.SmeltingRecipes;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 import com.tutorialmod.turtywurty.world.gen.WorldGenOres;
 
 import net.minecraft.block.Block;
@@ -39,18 +38,12 @@ public class RegistryHandler
 		TutorialMod.proxy.registerItemRenderer(Item.getItemFromBlock(BlockInit.SILVER_CHEST), 0, "inventory");
 		for(Item item : ItemInit.ITEMS)
 		{
-			if(item instanceof IHasModel)
-			{
-				((IHasModel)item).registerModels();
-			}
+			TutorialMod.proxy.registerItemRenderer(item, 0, "inventory");
 		}
 		
 		for(Block block : BlockInit.BLOCKS)
 		{
-			if(block instanceof IHasModel)
-			{
-				((IHasModel)block).registerModels();
-			}
+			TutorialMod.proxy.registerItemRenderer(Item.getItemFromBlock(block), 0, "inventory");
 		}
 	}
 	

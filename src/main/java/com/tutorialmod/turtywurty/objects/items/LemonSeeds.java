@@ -3,7 +3,6 @@ package com.tutorialmod.turtywurty.objects.items;
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 
-public class LemonSeeds extends Item implements IHasModel, IPlantable
+public class LemonSeeds extends Item implements IPlantable
 {
 	public LemonSeeds(String name) 
 	{
@@ -53,11 +52,5 @@ public class LemonSeeds extends Item implements IHasModel, IPlantable
 	public IBlockState getPlant(IBlockAccess world, BlockPos pos) 
 	{
 		return BlockInit.LEMON_PLANT.getDefaultState();
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 }

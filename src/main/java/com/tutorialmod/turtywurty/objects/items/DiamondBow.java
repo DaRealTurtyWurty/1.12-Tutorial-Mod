@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.IItemPropertyGetter;
@@ -15,7 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class DiamondBow extends ItemBow implements IHasModel
+public class DiamondBow extends ItemBow
 {
 	public DiamondBow(String name) 
 	{
@@ -66,11 +65,5 @@ public class DiamondBow extends ItemBow implements IHasModel
 			return true;
 		}
 		return false;
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(this, 0, "inventory");
 	}
 }

@@ -4,7 +4,6 @@ import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
 import com.tutorialmod.turtywurty.util.Reference;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
@@ -18,7 +17,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -31,7 +29,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SilverFurnace extends BlockContainer implements IHasModel
+public class SilverFurnace extends BlockContainer
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	private final boolean isBurning;
@@ -224,11 +222,5 @@ public class SilverFurnace extends BlockContainer implements IHasModel
 	public BlockRenderLayer getBlockLayer() 
 	{
 		return BlockRenderLayer.CUTOUT;
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 	}
 }

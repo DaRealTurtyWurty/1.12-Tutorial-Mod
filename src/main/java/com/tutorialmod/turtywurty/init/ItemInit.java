@@ -18,16 +18,6 @@ import com.tutorialmod.turtywurty.objects.items.tools.ToolHoe;
 import com.tutorialmod.turtywurty.objects.items.tools.ToolPickaxe;
 import com.tutorialmod.turtywurty.objects.items.tools.ToolShovel;
 import com.tutorialmod.turtywurty.objects.items.tools.ToolSword;
-import com.tutorialmod.turtywurty.objects.items.worldIn.BlockToAir;
-import com.tutorialmod.turtywurty.objects.items.worldIn.KillYourself;
-import com.tutorialmod.turtywurty.objects.items.worldIn.PlaySound;
-import com.tutorialmod.turtywurty.objects.items.worldIn.RainStrength;
-import com.tutorialmod.turtywurty.objects.items.worldIn.Raining;
-import com.tutorialmod.turtywurty.objects.items.worldIn.Respawn;
-import com.tutorialmod.turtywurty.objects.items.worldIn.Spawnpoint;
-import com.tutorialmod.turtywurty.objects.items.worldIn.ThunderStrength;
-import com.tutorialmod.turtywurty.objects.items.worldIn.Thundering;
-import com.tutorialmod.turtywurty.objects.items.worldIn.Time;
 import com.tutorialmod.turtywurty.util.Reference;
 
 import net.minecraft.init.SoundEvents;
@@ -73,18 +63,6 @@ public class ItemInit
 	//Staffs
 	public static final Item LARGE_FIREBALL_STAFF = new LargeFireballStaff("large_fireball_staff"); 
 	public static final Item LIGHTNING_STAFF = new LightningStaff("lightning_staff");
-	
-	//worldIn Stuff
-	public static final Item RAIN_STRENGTH = new RainStrength("rain_strength");
-	public static final Item THUNDER_STRENGTH = new ThunderStrength("thunder_strength");
-	public static final Item RAINING = new Raining("raining");
-	public static final Item THUNDERING = new Thundering("thundering");
-	public static final Item PLAY_SOUND = new PlaySound("play_sound");
-	public static final Item KILL_YOURSELF = new KillYourself("kill_yourself");
-	public static final Item RESPAWN = new Respawn("respawn");
-	public static final Item SPAWNPOINT = new Spawnpoint("spawnpoint");
-	public static final Item TIME = new Time("time");
-	public static final Item BLOCK_TO_AIR = new BlockToAir("block_to_air");
 	
 	//Bows
 	public static final Item DIAMOND_BOW = new DiamondBow("diamond_bow");

@@ -3,16 +3,12 @@ package com.tutorialmod.turtywurty.objects.blocks;
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.interfaces.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.world.World;
 
-public class BlockBase extends Block implements IHasModel
+public class BlockBase extends Block
 {
 	public BlockBase(String name, Material material) 
 	{
@@ -23,11 +19,5 @@ public class BlockBase extends Block implements IHasModel
 		
 		BlockInit.BLOCKS.add(this);
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		TutorialMod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 	}
 }
