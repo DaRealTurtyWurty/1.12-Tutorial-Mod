@@ -8,7 +8,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderDiamondArrow extends RenderArrow<EntityDiamondArrow>
 {
-
 	public RenderDiamondArrow(RenderManager manager) 
 	{
 		super(manager);
