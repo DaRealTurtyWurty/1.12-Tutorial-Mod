@@ -37,7 +37,6 @@ public class RandomBlock extends Block
 		setSoundType(SoundType.SLIME);
 		//setBlockUnbreakable();
 		
-		
 		BlockInit.BLOCKS.add(this);
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
