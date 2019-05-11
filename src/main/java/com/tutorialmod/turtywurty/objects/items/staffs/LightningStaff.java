@@ -1,7 +1,7 @@
 package com.tutorialmod.turtywurty.objects.items.staffs;
 
 import com.tutorialmod.turtywurty.TutorialMod;
-import com.tutorialmod.turtywurty.entity.lightning_ball.EntityLightningBall;
+import com.tutorialmod.turtywurty.entity.lightningBall.EntityLightningBall;
 import com.tutorialmod.turtywurty.init.ItemInit;
 
 import net.minecraft.entity.player.EntityPlayer;

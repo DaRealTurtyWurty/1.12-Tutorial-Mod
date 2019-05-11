@@ -1,4 +1,4 @@
-package com.tutorialmod.turtywurty.entity.lightning_ball;
+package com.tutorialmod.turtywurty.entity.lightningBall;
 
 import java.util.List;
 
