@@ -6,6 +6,7 @@ import java.util.List;
 import com.tutorialmod.turtywurty.objects.items.DarkApple;
 import com.tutorialmod.turtywurty.objects.items.DiamondArrow;
 import com.tutorialmod.turtywurty.objects.items.DiamondBow;
+import com.tutorialmod.turtywurty.objects.items.DiamondFishingRod;
 import com.tutorialmod.turtywurty.objects.items.ItemBase;
 import com.tutorialmod.turtywurty.objects.items.LemonSeeds;
 import com.tutorialmod.turtywurty.objects.items.RadioactiveCoal;
@@ -46,6 +47,7 @@ public class ItemInit
 	public static final Item URANIUM_NUGGET = new ItemBase("uranium_nugget");
 	public static final Item RUBY_APPLE = new RubyApple("ruby_apple", 7, 1.2F, false);
 	public static final Item LEMON_SEEDS = new LemonSeeds("lemon_seeds");
+	public static final Item DIAMOND_ROD = new DiamondFishingRod("diamond_fishing_rod");
 	
 	//Armour
 	public static final Item HELMET_RUBY = new ArmorBase("helmet_ruby", ARMOR_RUBY, 1, EntityEquipmentSlot.HEAD);

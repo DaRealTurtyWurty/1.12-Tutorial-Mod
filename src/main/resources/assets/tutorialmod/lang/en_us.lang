@@ -12,6 +12,7 @@ item.lemon_seeds.name=Lemon Seeds
 item.magiball.name=Magiball
 item.diamond_bow.name=Diamond Bow
 item.diamond_arrow.name=Diamond Arrow
+item.diamond_fishing_rod.name=Diamond Fishing Rod
 
 //Fluids
 fluid.white_water=White Water

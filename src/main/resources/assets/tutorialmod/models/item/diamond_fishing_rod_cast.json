@@ -1,0 +1,7 @@
+{
+    "parent": "item/fishing_rod",
+    "textures": 
+    {
+        "layer0": "tutorialmod:items/diamond_fishing_rod_cast"
+    }
+}
