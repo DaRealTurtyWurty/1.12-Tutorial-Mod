@@ -2,6 +2,7 @@ package com.tutorialmod.turtywurty.util.handlers;
 
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.events.OverrideRecipes;
+import com.tutorialmod.turtywurty.init.BiomeInit;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.EntityInit;
 import com.tutorialmod.turtywurty.init.FluidInit;
@@ -65,6 +66,7 @@ public class RegistryHandler
 	{
 		FluidInit.registerFluids();
 		RenderHandler.registerCustomMeshesAndStates();
+		BiomeInit.registerBiomes();
 		GameRegistry.registerWorldGenerator(new WorldGenOres(), 3);
 		EntityInit.registerEntities();
 		RenderHandler.registerEntityRenders();
