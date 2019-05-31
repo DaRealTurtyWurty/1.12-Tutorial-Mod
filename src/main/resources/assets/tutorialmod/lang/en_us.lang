@@ -13,6 +13,7 @@ item.magiball.name=Magiball
 item.diamond_bow.name=Diamond Bow
 item.diamond_arrow.name=Diamond Arrow
 item.diamond_fishing_rod.name=Diamond Fishing Rod
+item.wrench.name=Wrench
 
 //Fluids
 fluid.white_water=White Water

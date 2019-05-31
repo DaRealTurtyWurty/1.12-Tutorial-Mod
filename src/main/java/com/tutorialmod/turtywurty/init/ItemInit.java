@@ -19,6 +19,7 @@ import com.tutorialmod.turtywurty.objects.items.tools.ToolHoe;
 import com.tutorialmod.turtywurty.objects.items.tools.ToolPickaxe;
 import com.tutorialmod.turtywurty.objects.items.tools.ToolShovel;
 import com.tutorialmod.turtywurty.objects.items.tools.ToolSword;
+import com.tutorialmod.turtywurty.objects.items.tools.Wrench;
 import com.tutorialmod.turtywurty.util.Reference;
 
 import net.minecraft.init.SoundEvents;
@@ -48,6 +49,7 @@ public class ItemInit
 	public static final Item RUBY_APPLE = new RubyApple("ruby_apple", 7, 1.2F, false);
 	public static final Item LEMON_SEEDS = new LemonSeeds("lemon_seeds");
 	public static final Item DIAMOND_ROD = new DiamondFishingRod("diamond_fishing_rod");
+	public static final Item WRENCH = new Wrench("wrench", 50);
 	
 	//Armour
 	public static final Item HELMET_RUBY = new ArmorBase("helmet_ruby", ARMOR_RUBY, 1, EntityEquipmentSlot.HEAD);
