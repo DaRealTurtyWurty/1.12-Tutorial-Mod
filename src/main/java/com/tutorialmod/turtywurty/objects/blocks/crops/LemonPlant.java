@@ -35,8 +35,8 @@ public class LemonPlant extends BlockCrops
 		{
 			if(this.isMaxAge(state))
 			{
-				worldIn.spawnEntity(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemInit.LEMON_SEEDS, 2)));
 				worldIn.spawnEntity(new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemInit.RUBY_APPLE, 1)));
+				worldIn.setBlockState(pos, BlockInit.LEMON_PLANT.getDefaultState());
 				return true;
 			}
 		}

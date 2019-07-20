@@ -5,7 +5,10 @@ import com.tutorialmod.turtywurty.util.Reference;
 import net.minecraft.client.renderer.entity.RenderArrow;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SideOnly(Side.CLIENT)
 public class RenderDiamondArrow extends RenderArrow<EntityDiamondArrow>
 {
 	public RenderDiamondArrow(RenderManager manager) 

@@ -15,6 +15,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class GuiHandler implements IGuiHandler
 {
@@ -39,6 +41,7 @@ public class GuiHandler implements IGuiHandler
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) 
 	{
 		if(ID == Reference.GUI_SILVER_CHEST)
@@ -56,10 +59,5 @@ public class GuiHandler implements IGuiHandler
 			return new GuiSilverFurnace(player.inventory, (TileEntitySilverFurnace)world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
-	}
-	
-	public static void registerGuis()
-	{
-		
 	}
 }

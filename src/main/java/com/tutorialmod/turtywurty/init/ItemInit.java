@@ -9,6 +9,7 @@ import com.tutorialmod.turtywurty.objects.items.DiamondBow;
 import com.tutorialmod.turtywurty.objects.items.DiamondFishingRod;
 import com.tutorialmod.turtywurty.objects.items.ItemBase;
 import com.tutorialmod.turtywurty.objects.items.LemonSeeds;
+import com.tutorialmod.turtywurty.objects.items.Magiball;
 import com.tutorialmod.turtywurty.objects.items.RadioactiveCoal;
 import com.tutorialmod.turtywurty.objects.items.RubyApple;
 import com.tutorialmod.turtywurty.objects.items.armor.ArmorBase;
@@ -50,6 +51,7 @@ public class ItemInit
 	public static final Item LEMON_SEEDS = new LemonSeeds("lemon_seeds");
 	public static final Item DIAMOND_ROD = new DiamondFishingRod("diamond_fishing_rod");
 	public static final Item WRENCH = new Wrench("wrench", 50);
+	public static final Item MAGIBALL = new Magiball("magiball");
 	
 	//Armour
 	public static final Item HELMET_RUBY = new ArmorBase("helmet_ruby", ARMOR_RUBY, 1, EntityEquipmentSlot.HEAD);

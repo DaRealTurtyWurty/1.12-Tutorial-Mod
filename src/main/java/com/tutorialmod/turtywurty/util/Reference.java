@@ -16,4 +16,5 @@ public class Reference
 	
 	public static final int ENTITY_TEST = 250;
 	public static final int ENTITY_DIAMOND_ARROW = 251;
+	public static final int ENTITY_MAGIBALL = 252;
 }

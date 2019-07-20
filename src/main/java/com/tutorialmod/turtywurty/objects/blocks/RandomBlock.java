@@ -48,33 +48,6 @@ public class RandomBlock extends Block
 	}
 	
 	@Override
-	public boolean isFullBlock(IBlockState state) 
-	{
-		return true;
-	}
-	
-	@Override
-	public boolean isFullCube(IBlockState state) 
-	{
-		return true;
-	}
-	
-	private boolean canBlockStay(World worldIn, BlockPos pos)
-	{
-		return worldIn.getBlockState(pos.down()).isSideSolid(worldIn, pos, EnumFacing.UP);
-	}
-	
-	@Override
-	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) 
-	{
-		if(!this.canBlockStay(worldIn, pos))
-		{
-			worldIn.setBlockToAir(fromPos);
-			InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockInit.RANDOM_BLOCK, 1));
-		}
-	}
-	
-	@Override
 	public BlockRenderLayer getBlockLayer() 
 	{
 		return BlockRenderLayer.TRANSLUCENT;

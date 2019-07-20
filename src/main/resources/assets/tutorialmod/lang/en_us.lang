@@ -14,6 +14,7 @@ item.diamond_bow.name=Diamond Bow
 item.diamond_arrow.name=Diamond Arrow
 item.diamond_fishing_rod.name=Diamond Fishing Rod
 item.wrench.name=Wrench
+item.magiball.name=Magiball
 
 //Fluids
 fluid.white_water=White Water
@@ -57,3 +58,7 @@ item.lightning_staff.name=Lightning Staff
 //Entities
 entity.test.name=Test
 entity.diamond_arrow.name=Diamond Arrow
+entity.magiball.name=Magiball
+
+//World Types
+generator.test=Test

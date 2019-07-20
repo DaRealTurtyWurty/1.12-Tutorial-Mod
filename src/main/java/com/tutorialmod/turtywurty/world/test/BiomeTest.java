@@ -17,7 +17,7 @@ public class BiomeTest extends Biome
 		super(new BiomeProperties("Test").setBaseHeight(0.2f).setTemperature(0.5f).setHeightVariation(1.8f).setWaterColor(16724639));
 		
 		topBlock = BlockInit.SILVER_BLOCK.getDefaultState();
-		fillerBlock = BlockInit.SILVER_FURNACE_ON.getDefaultState();
+		fillerBlock = BlockInit.RANDOM_BLOCK.getDefaultState();
 		
 		//decorator = new BiomeDecoratorTest();
 		this.spawnableCaveCreatureList.clear();
