@@ -13,8 +13,11 @@ import com.tutorialmod.turtywurty.objects.blocks.fluids.BlockWhiteWaterFluid;
 import com.tutorialmod.turtywurty.objects.blocks.silver_chest.SilverChest;
 import com.tutorialmod.turtywurty.objects.blocks.silver_chest_na.SilverChestNA;
 import com.tutorialmod.turtywurty.objects.blocks.silver_furnace.SilverFurnace;
+import com.tutorialmod.turtywurty.objects.blocks.slab.BlockDoubleSlabBase;
+import com.tutorialmod.turtywurty.objects.blocks.slab.BlockHalfSlabBase;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 
 public class BlockInit
@@ -30,6 +33,8 @@ public class BlockInit
 	public static final Block SILVER_CHEST_NA = new SilverChestNA("silver_chest_na", Material.WOOD);
 	public static final Block SILVER_FURNACE_OFF = new SilverFurnace("silver_furnace_off", false).setCreativeTab(TutorialMod.TUTORIALMODTAB);
 	public static final Block SILVER_FURNACE_ON = new SilverFurnace("silver_furnace_on", true);
+	public static final BlockSlab SILVER_SLAB_DOUBLE = new BlockDoubleSlabBase("silver_slab_double", Material.IRON, TutorialMod.TUTORIALMODTAB, BlockInit.SILVER_SLAB_HALF);
+	public static final BlockSlab SILVER_SLAB_HALF = new BlockHalfSlabBase("silver_slab_half", Material.IRON, TutorialMod.TUTORIALMODTAB, BlockInit.SILVER_SLAB_HALF, BlockInit.SILVER_SLAB_DOUBLE);
 	
 	//Fluids
 	public static final Block WHITE_WATER_FLUID = new BlockWhiteWaterFluid("white_water", FluidInit.WHITE_WATER_FLUID, Material.WATER);

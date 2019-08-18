@@ -1,0 +1,9 @@
+{
+    "parent": "block/half_slab",
+    "textures":
+    {
+        "bottom": "tutorialmod:blocks/silver_block",
+        "top": "tutorialmod:blocks/silver_block",
+        "side": "tutorialmod:blocks/silver_block"
+    }
+}
