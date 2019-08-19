@@ -139,6 +139,7 @@ public class BiomeProviderCustom extends BiomeProvider
 		}
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@Override
 	public BlockPos findBiomePosition(int x, int z, int range, List biomes, Random random) 
 	{

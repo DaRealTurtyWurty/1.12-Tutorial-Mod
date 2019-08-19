@@ -25,6 +25,7 @@ public class EntityTest extends EntityAgeable
 		this.setSize(width, height);
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	protected void initEntityAI() 
 	{

@@ -32,6 +32,7 @@ import net.minecraft.world.World;
 public class SilverFurnace extends BlockContainer
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
+	@SuppressWarnings("unused")
 	private final boolean isBurning;
 	private static boolean keepInventory;
 	

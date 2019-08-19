@@ -95,6 +95,7 @@ public class TileEntitySilverChest extends TileEntityLockableLoot implements ITi
 		return Reference.MOD_ID + ":silver_chest";
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void update() 
 	{

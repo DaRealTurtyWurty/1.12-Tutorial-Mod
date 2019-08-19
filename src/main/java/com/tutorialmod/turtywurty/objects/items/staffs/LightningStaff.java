@@ -4,16 +4,12 @@ import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.entity.lightningBall.EntityLightningBall;
 import com.tutorialmod.turtywurty.init.ItemInit;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 

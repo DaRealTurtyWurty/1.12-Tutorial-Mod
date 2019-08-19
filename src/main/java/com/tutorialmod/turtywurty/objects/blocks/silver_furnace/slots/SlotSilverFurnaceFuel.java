@@ -6,7 +6,6 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import scala.sys.process.ProcessBuilderImpl.IStreamBuilder;
 
 public class SlotSilverFurnaceFuel extends Slot
 {

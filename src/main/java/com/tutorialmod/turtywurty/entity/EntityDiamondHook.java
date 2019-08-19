@@ -129,6 +129,7 @@ public class EntityDiamondHook extends EntityFishHook
         super.notifyDataManagerChange(key);
     }
 	
+	@SuppressWarnings("unused")
 	@SideOnly(Side.CLIENT)
     public boolean isInRangeToRenderDist(double distance)
     {
@@ -147,7 +148,8 @@ public class EntityDiamondHook extends EntityFishHook
     /**
      * Called to update the entity's position/logic.
      */
-    public void onUpdate()
+    @SuppressWarnings("unused")
+	public void onUpdate()
     {
         super.onUpdate();
 
@@ -514,7 +516,8 @@ public class EntityDiamondHook extends EntityFishHook
     {
     }
 
-    public int handleHookRetraction()
+    @SuppressWarnings("unused")
+	public int handleHookRetraction()
     {
         if (!this.world.isRemote && this.angler != null)
         {
@@ -592,7 +595,8 @@ public class EntityDiamondHook extends EntityFishHook
         super.handleStatusUpdate(id);
     }
 
-    protected void bringInHookedEntity()
+    @SuppressWarnings("unused")
+	protected void bringInHookedEntity()
     {
         if (this.angler != null)
         {

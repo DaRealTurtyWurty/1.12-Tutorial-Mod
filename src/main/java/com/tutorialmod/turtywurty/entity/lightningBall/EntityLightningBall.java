@@ -16,6 +16,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
+@SuppressWarnings("unused")
 public class EntityLightningBall extends EntitySnowball 
 {
 	private int xTile;

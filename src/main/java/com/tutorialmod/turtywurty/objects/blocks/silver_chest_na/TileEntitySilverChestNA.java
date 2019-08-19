@@ -100,6 +100,7 @@ public class TileEntitySilverChestNA extends TileEntityLockableLoot implements I
 		return this.chestContents;
 	}
 	
+	@SuppressWarnings("unused")
 	public void update()
 	{
 		if (!this.world.isRemote && this.numPlayersUsing != 0 && (this.ticksSinceSync + pos.getX() + pos.getY() + pos.getZ()) % 200 == 0)

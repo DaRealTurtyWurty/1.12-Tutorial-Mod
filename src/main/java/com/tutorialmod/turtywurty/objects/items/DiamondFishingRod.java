@@ -3,7 +3,6 @@ package com.tutorialmod.turtywurty.objects.items;
 import javax.annotation.Nullable;
 
 import com.tutorialmod.turtywurty.TutorialMod;
-import com.tutorialmod.turtywurty.entity.EntityDiamondHook;
 import com.tutorialmod.turtywurty.init.ItemInit;
 
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -12,7 +11,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityFishHook;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.IItemPropertyGetter;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFishingRod;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;

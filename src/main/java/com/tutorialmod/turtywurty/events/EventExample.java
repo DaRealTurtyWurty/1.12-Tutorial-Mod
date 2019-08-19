@@ -18,6 +18,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EventExample 
 {
+	@SuppressWarnings("unused")
 	@SubscribeEvent
 	public void exampleEvent(HarvestDropsEvent event)
 	{

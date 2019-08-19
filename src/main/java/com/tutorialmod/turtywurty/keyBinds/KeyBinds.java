@@ -1,7 +1,5 @@
 package com.tutorialmod.turtywurty.keyBinds;
 
-import java.awt.event.InputEvent;
-
 import org.lwjgl.input.Keyboard;
 
 import com.tutorialmod.turtywurty.TutorialMod;

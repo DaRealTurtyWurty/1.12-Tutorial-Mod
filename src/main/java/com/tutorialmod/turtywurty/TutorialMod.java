@@ -1,12 +1,9 @@
 package com.tutorialmod.turtywurty;
 
 import com.tutorialmod.turtywurty.proxy.CommonProxy;
-import com.tutorialmod.turtywurty.recipes.CraftingRecipes;
-import com.tutorialmod.turtywurty.recipes.SmeltingRecipes;
 import com.tutorialmod.turtywurty.tabs.TutorialTab;
 import com.tutorialmod.turtywurty.util.Reference;
 import com.tutorialmod.turtywurty.util.handlers.RegistryHandler;
-import com.tutorialmod.turtywurty.world.gen.WorldGenOres;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -18,7 +15,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, version = Reference.VERSION, name = Reference.NAME)
 public class TutorialMod 

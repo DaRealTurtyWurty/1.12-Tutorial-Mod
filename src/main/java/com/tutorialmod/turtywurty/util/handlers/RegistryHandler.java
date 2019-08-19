@@ -86,6 +86,7 @@ public class RegistryHandler
 	
 	public static void postInitRegistries()
 	{
+		@SuppressWarnings("unused")
 		WorldType TEST_TYPE = new WorldTypeTest("test");
 	}
 	

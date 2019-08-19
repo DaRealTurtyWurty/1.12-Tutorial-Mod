@@ -38,6 +38,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.common.eventhandler.Event;
 
+@SuppressWarnings("unused")
 public class NetherGenTemplate implements IChunkGenerator
 {
     protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
@@ -59,7 +60,7 @@ public class NetherGenTemplate implements IChunkGenerator
     private NoiseGeneratorOctaves lperlinNoise1, lperlinNoise2, perlinNoise1, slowsandGravelNoiseGen, netherrackExculsivityNoiseGen, scaleNoise, depthNoise;
     double[] pnr, ar, br, dr, noiseData4;
     
-    private final WorldGenFire fireFeature = new WorldGenFire();
+	private final WorldGenFire fireFeature = new WorldGenFire();
     private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
     private final WorldGenGlowStone2 hellPortalGen = new WorldGenGlowStone2();
     private final WorldGenBush brownMushroomFeature = new WorldGenBush(Blocks.BROWN_MUSHROOM);
@@ -374,7 +375,8 @@ public class NetherGenTemplate implements IChunkGenerator
         return noiseField;
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void populate(int x, int z)
     {
         BlockFalling.fallInstantly = true;
