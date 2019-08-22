@@ -17,9 +17,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 
-public class LemonSeeds extends Item implements IPlantable
+public class ItemLemonSeeds extends Item implements IPlantable
 {
-	public LemonSeeds(String name) 
+	public ItemLemonSeeds(String name) 
 	{
 		setUnlocalizedName(name);
 		setRegistryName(name);
@@ -36,10 +36,13 @@ public class LemonSeeds extends Item implements IPlantable
 		if(facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, stack) && state.getBlock().canSustainPlant(state, worldIn, pos, EnumFacing.UP, this) && worldIn.isAirBlock(pos.up()))
 		{
 			worldIn.setBlockState(pos.up(), BlockInit.LEMON_PLANT.getDefaultState());
-			stack.shrink(1);
+			if(!player.capabilities.isCreativeMode && !worldIn.isRemote)
+			{
+				stack.shrink(1);
+			}
 			return EnumActionResult.SUCCESS;
 		}
-		else return EnumActionResult.FAIL;
+		return EnumActionResult.FAIL;
 	}
 	
 	@Override

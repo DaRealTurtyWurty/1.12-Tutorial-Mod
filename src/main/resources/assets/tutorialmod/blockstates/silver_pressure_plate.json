@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "tutorialmod:silver_pressure_plate_up" },
+        "powered=true": { "model": "tutorialmod:silver_pressure_plate_down" }
+    }
+}

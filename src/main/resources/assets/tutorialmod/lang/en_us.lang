@@ -45,6 +45,9 @@ tile.silver_furnace_on.name=Lit Silver Furnace
 tile.silver_slab_half.name=Silver Half Slab
 tile.silver_slab_double.name=Double Silver Slab
 tile.silver_stairs.name=Silver Stairs
+tile.silver_fence.name=Silver Fence
+tile.silver_button.name=Silver Button
+tile.silver_pressure_plate.name=Silver Pressure Plate
 
 //Tabs
 itemGroup.tutorialmodtab=Tutorial Tab
