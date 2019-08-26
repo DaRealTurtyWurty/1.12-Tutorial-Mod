@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumParticleTypes;
@@ -219,5 +220,14 @@ public class EntityLightningBall extends EntitySnowball
 
         this.setPosition(this.posX, this.posY, this.posZ);
         this.world.spawnEntity(new EntityLightningBolt(this.world, this.posX, this.posY, this.posZ, false));
+    }
+    
+    @Override
+    protected void onImpact(RayTraceResult result) 
+    {
+    	EntityTNTPrimed entitytnt = new EntityTNTPrimed(this.world, this.posX, this.posY, this.posZ, thrower);
+    	entitytnt.setFuse(60);
+    	this.world.spawnEntity(entitytnt);
+    	super.onImpact(result);
     }
 }

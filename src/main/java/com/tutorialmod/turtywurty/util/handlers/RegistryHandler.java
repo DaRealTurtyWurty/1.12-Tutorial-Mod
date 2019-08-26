@@ -1,6 +1,7 @@
 package com.tutorialmod.turtywurty.util.handlers;
 
 import com.tutorialmod.turtywurty.TutorialMod;
+import com.tutorialmod.turtywurty.commands.teleport.CommandTeleportDim;
 import com.tutorialmod.turtywurty.init.BiomeInit;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.DimensionInit;
@@ -92,6 +93,6 @@ public class RegistryHandler
 	
 	public static void serverRegistries(FMLServerStartingEvent event)
 	{
-		
+		event.registerServerCommand(new CommandTeleportDim());
 	}
 }
