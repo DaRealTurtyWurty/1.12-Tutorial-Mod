@@ -51,7 +51,7 @@ public class ItemInit
 	public static final Item DIAMOND_ROD = new DiamondFishingRod("diamond_fishing_rod");
 	public static final Item WRENCH = new Wrench("wrench", 50);
 	public static final Item MAGIBALL = new Magiball("magiball");
-	public static final Item LEMON_SEEDS =new ItemLemonSeeds("lemon_seeds");
+	public static final Item LEMON_SEEDS = new ItemLemonSeeds("lemon_seeds");
 	
 	//Armour
 	public static final Item HELMET_RUBY = new ArmorBase("helmet_ruby", ARMOR_RUBY, 1, EntityEquipmentSlot.HEAD);

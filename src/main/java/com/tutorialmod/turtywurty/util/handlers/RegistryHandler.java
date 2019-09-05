@@ -20,6 +20,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -83,6 +84,7 @@ public class RegistryHandler
 		CraftingRecipes.init();
 		OreDictionaryInit.registerOres();
 		TutorialMod.proxy.render();
+		EnumHelper.addArt("Test", "Test", 16, 16, 112, 0);
 	}
 	
 	public static void postInitRegistries()
