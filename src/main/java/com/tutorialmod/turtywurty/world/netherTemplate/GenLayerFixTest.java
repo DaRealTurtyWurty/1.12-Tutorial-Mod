@@ -1,4 +1,4 @@
-package com.tutorialmod.turtywurty.world;
+package com.tutorialmod.turtywurty.world.netherTemplate;
 
 import com.tutorialmod.turtywurty.world.test.GenLayerTest;
 

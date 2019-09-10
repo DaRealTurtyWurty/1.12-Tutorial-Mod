@@ -1,4 +1,4 @@
-package com.tutorialmod.turtywurty.world;
+package com.tutorialmod.turtywurty.world.overworldTemplate;
 
 import java.util.List;
 import java.util.Random;
@@ -14,42 +14,42 @@ import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class BiomeProviderCustom extends BiomeProvider
+public class BiomeProviderOverworld extends BiomeProvider
 {
 	private GenLayer genBiomes;
 	private GenLayer biomeIndexLayer;
 	private BiomeCache biomeCache;
-	
-	public BiomeProviderCustom() 
+
+	public BiomeProviderOverworld() 
 	{
 		this.biomeCache = new BiomeCache(this);
 	}
-	
-	public BiomeProviderCustom(long seed)
+
+	public BiomeProviderOverworld(long seed) 
 	{
 		this();
-		GenLayer[] aGenLayer = GenLayerFixTest.createWorld(seed);
-		this.genBiomes = aGenLayer[0];
-		this.biomeIndexLayer = aGenLayer[1];
+		GenLayer[] agenlayer = GenLayerFixOverworld.createWorld(seed);
+		this.genBiomes = agenlayer[0];
+		this.biomeIndexLayer = agenlayer[1];
 	}
-	
-	public BiomeProviderCustom(World world)
+
+	public BiomeProviderOverworld(World world) 
 	{
 		this(world.getSeed());
 	}
-	
+
 	@Override
 	public Biome getBiome(BlockPos pos) 
 	{
 		return this.getBiome(pos, null);
 	}
-	
+
 	@Override
 	public Biome getBiome(BlockPos pos, Biome defaultBiome) 
 	{
 		return this.biomeCache.getBiome(pos.getX(), pos.getZ(), defaultBiome);
 	}
-	
+
 	@Override
 	public Biome[] getBiomesForGeneration(Biome[] par1ArrayOfBiome, int par2, int par3, int par4, int par5) 
 	{
@@ -81,7 +81,13 @@ public class BiomeProviderCustom extends BiomeProvider
 			throw new ReportedException(crashreport);
 		}
 	}
-	
+
+	@Override
+	public Biome[] getBiomes(Biome[] oldBiomeList, int x, int z, int width, int depth) 
+	{
+		return this.getBiomes(oldBiomeList, x, z, width, depth, true);
+	}
+
 	@Override
 	public Biome[] getBiomes(Biome[] listToReuse, int x, int y, int width, int length, boolean cacheFlag) 
 	{
@@ -108,7 +114,7 @@ public class BiomeProviderCustom extends BiomeProvider
 			return listToReuse;
 		}
 	}
-	
+
 	@Override
 	public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed) {
 		IntCache.resetIntCache();
@@ -138,11 +144,10 @@ public class BiomeProviderCustom extends BiomeProvider
 			throw new ReportedException(crashreport);
 		}
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	@Override
-	public BlockPos findBiomePosition(int x, int z, int range, List biomes, Random random) 
-	{
+	public BlockPos findBiomePosition(int x, int z, int range, List biomes, Random random) {
 		IntCache.resetIntCache();
 		int l = x - range >> 2;
 		int i1 = z - range >> 2;
@@ -164,10 +169,9 @@ public class BiomeProviderCustom extends BiomeProvider
 		}
 		return blockpos;
 	}
-	
+
 	@Override
-	public void cleanupCache() 
-	{
+	public void cleanupCache() {
 		this.biomeCache.cleanupCache();
 	}
 }

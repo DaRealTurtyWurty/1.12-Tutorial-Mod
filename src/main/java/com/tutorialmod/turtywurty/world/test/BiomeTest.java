@@ -5,6 +5,7 @@ import java.util.Random;
 import com.tutorialmod.turtywurty.entity.test.EntityTest;
 import com.tutorialmod.turtywurty.init.BlockInit;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 
 public class BiomeTest extends Biome
@@ -15,7 +16,7 @@ public class BiomeTest extends Biome
 		super(new BiomeProperties("Test").setBaseHeight(0.2f).setTemperature(0.5f).setHeightVariation(1.8f).setWaterColor(16724639));
 		
 		topBlock = BlockInit.SILVER_BLOCK.getDefaultState();
-		fillerBlock = BlockInit.RANDOM_BLOCK.getDefaultState();
+		fillerBlock = Blocks.MAGMA.getDefaultState();
 		
 		//decorator = new BiomeDecoratorTest();
 		this.spawnableCaveCreatureList.clear();

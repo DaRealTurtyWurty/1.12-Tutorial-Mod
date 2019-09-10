@@ -1,7 +1,6 @@
 package com.tutorialmod.turtywurty.world.netherTemplate;
 
 import com.tutorialmod.turtywurty.init.DimensionInit;
-import com.tutorialmod.turtywurty.world.BiomeProviderCustom;
 
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
