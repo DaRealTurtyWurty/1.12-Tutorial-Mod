@@ -3,7 +3,7 @@ package com.tutorialmod.turtywurty.objects.blocks.silver_chest;
 import com.tutorialmod.turtywurty.TutorialMod;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
-import com.tutorialmod.turtywurty.util.Reference;
+import com.tutorialmod.turtywurty.util.handlers.ConfigHandler;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
@@ -53,7 +53,7 @@ public class SilverChest extends BlockContainer
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
 	{
-		playerIn.openGui(TutorialMod.instance, Reference.GUI_SILVER_CHEST, worldIn, pos.getX(), pos.getY(), pos.getZ());
+		playerIn.openGui(TutorialMod.instance, ConfigHandler.GUI_SILVER_CHEST, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		return true;
 	}
 	

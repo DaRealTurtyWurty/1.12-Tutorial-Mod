@@ -5,6 +5,7 @@ import com.tutorialmod.turtywurty.entity.diamondArrow.EntityDiamondArrow;
 import com.tutorialmod.turtywurty.entity.magiball.EntityMagiball;
 import com.tutorialmod.turtywurty.entity.test.EntityTest;
 import com.tutorialmod.turtywurty.util.Reference;
+import com.tutorialmod.turtywurty.util.handlers.ConfigHandler;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
@@ -15,9 +16,9 @@ public class EntityInit
 {
 	public static void registerEntities()
 	{
-		registerEntity("test", EntityTest.class, Reference.ENTITY_TEST, 50, 13310623, 65354);
-		registerArrow("diamond_arrow", EntityDiamondArrow.class, Reference.ENTITY_DIAMOND_ARROW);
-		registerProjectile("magiball", Reference.ENTITY_MAGIBALL, EntityMagiball.class, ItemInit.MAGIBALL);
+		registerEntity("test", EntityTest.class, ConfigHandler.ENTITY_TEST, 50, 13310623, 65354);
+		registerArrow("diamond_arrow", EntityDiamondArrow.class, ConfigHandler.ENTITY_DIAMOND_ARROW);
+		registerProjectile("magiball", ConfigHandler.ENTITY_MAGIBALL, EntityMagiball.class, ItemInit.MAGIBALL);
 	}
 	
 	private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2)

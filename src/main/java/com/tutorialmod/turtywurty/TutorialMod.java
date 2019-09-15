@@ -1,5 +1,7 @@
 package com.tutorialmod.turtywurty;
 
+import java.io.File;
+
 import com.tutorialmod.turtywurty.proxy.CommonProxy;
 import com.tutorialmod.turtywurty.tabs.TutorialTab;
 import com.tutorialmod.turtywurty.util.Reference;
@@ -19,6 +21,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 @Mod(modid = Reference.MOD_ID, version = Reference.VERSION, name = Reference.NAME)
 public class TutorialMod 
 {
+	public static File config;
 	@Instance
 	public static TutorialMod instance;
 	
@@ -35,7 +38,7 @@ public class TutorialMod
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		RegistryHandler.preInitRegistries();
+		RegistryHandler.preInitRegistries(event);
 	}
 	
 	@EventHandler
