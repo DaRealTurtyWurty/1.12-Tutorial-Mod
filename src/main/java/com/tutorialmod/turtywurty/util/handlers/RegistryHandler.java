@@ -5,6 +5,7 @@ import com.tutorialmod.turtywurty.commands.teleport.CommandTeleportDim;
 import com.tutorialmod.turtywurty.init.BiomeInit;
 import com.tutorialmod.turtywurty.init.BlockInit;
 import com.tutorialmod.turtywurty.init.DimensionInit;
+import com.tutorialmod.turtywurty.init.EnchantmentInit;
 import com.tutorialmod.turtywurty.init.EntityInit;
 import com.tutorialmod.turtywurty.init.FluidInit;
 import com.tutorialmod.turtywurty.init.ItemInit;
@@ -17,6 +18,7 @@ import com.tutorialmod.turtywurty.world.gen.WorldGenOres;
 import com.tutorialmod.turtywurty.world.test.WorldTypeTest;
 
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -65,6 +67,12 @@ public class RegistryHandler
 	{
 		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
 		TileEntityHandler.registerTileEntities();
+	}
+	
+	@SubscribeEvent
+	public static void registerEnchant(RegistryEvent.Register<Enchantment> event)
+	{
+		event.getRegistry().registerAll(EnchantmentInit.ENCHANTMENTS.toArray(new Enchantment[0]));
 	}
 	
 	public static void preInitRegistries(FMLPreInitializationEvent event)

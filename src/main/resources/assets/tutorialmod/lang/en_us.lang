@@ -68,3 +68,6 @@ entity.magiball.name=Magiball
 
 //World Types
 generator.test=Test
+
+//Enchants
+enchantment.reflect_damage=Reflect Damage

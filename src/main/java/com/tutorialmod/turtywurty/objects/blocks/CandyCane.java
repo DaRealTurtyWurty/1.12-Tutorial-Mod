@@ -24,8 +24,10 @@ import net.minecraft.world.World;
 public class CandyCane extends Block
 {
 	public static final AxisAlignedBB CANDY_CANE = new AxisAlignedBB(0.4375D, 0.0D, 0.0625D, 0.5625D, 1.0D, 0.9375D);
+	//Facing(kinda) more to do with facing of bounding boxes
 	public static final AxisAlignedBB CANDY_CANE_WE = new AxisAlignedBB(0.0625D, 0.0D, 0.4375D, 0.9375D, 1.0D, 0.5625D);
 	
+	//Facing
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	{
 	    this.setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH)); 
@@ -42,6 +44,7 @@ public class CandyCane extends Block
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 	
+	//Facing
 	@Override
 	public IBlockState getStateFromMeta(int meta) 
     {
@@ -54,18 +57,21 @@ public class CandyCane extends Block
 		return getDefaultState().withProperty(FACING, facing);
     }
 	
+	//Facing
 	@Override
 	public int getMetaFromState(IBlockState state) 
     {
 		return ((EnumFacing) state.getValue(FACING)).getIndex();
     }
 	    
+	//Facing
     @Override
 	protected BlockStateContainer createBlockState() 
     {
     	return new BlockStateContainer(this, new IProperty[]{FACING});
     }
     
+    //Facing
     @Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos,EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) 
     {
@@ -117,6 +123,7 @@ public class CandyCane extends Block
 		return false;
 	}
 	
+	//Facing(kinda) more to do with facing of bounding boxes
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) 
 	{
