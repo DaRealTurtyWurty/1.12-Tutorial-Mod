@@ -14,7 +14,6 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable
 {
 	private CustomEnergyStorage storage = new CustomEnergyStorage(200000);
 	public int energy = storage.getEnergyStored();
-	@SuppressWarnings("unused")
 	private String customName;
 	
 	@Override
@@ -30,7 +29,6 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable
 		return super.hasCapability(capability, facing);
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) 
 	{

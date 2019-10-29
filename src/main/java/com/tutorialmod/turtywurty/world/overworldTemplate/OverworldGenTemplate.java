@@ -49,9 +49,7 @@ public class OverworldGenTemplate implements IChunkGenerator
 	double[] field_185987_f;
 	double[] field_185988_g;
 	double[] field_185989_h;
-	@SuppressWarnings("unused")
 	private final NoiseGeneratorOctaves noiseGen4;
-	@SuppressWarnings("unused")
 	private double stoneNoise[];
 	private MapGenBase caveGenerator;
 	// private MapGenBaseMeta bigCaveGenerator;

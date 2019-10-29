@@ -10,12 +10,12 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ContainerCandyCaneGen extends Container
+public class ContainerGlowstoneGenerator extends Container
 {
-	private final TileEntityCandyCaneGen tileentity;
+	private final TileEntityGlowstoneGenerator tileentity;
 	private int energy, cookTime;
 	
-	public ContainerCandyCaneGen(InventoryPlayer player, TileEntityCandyCaneGen tileentity) 
+	public ContainerGlowstoneGenerator(InventoryPlayer player, TileEntityGlowstoneGenerator tileentity) 
 	{
 		this.tileentity = tileentity;
 		IItemHandler handler = tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);

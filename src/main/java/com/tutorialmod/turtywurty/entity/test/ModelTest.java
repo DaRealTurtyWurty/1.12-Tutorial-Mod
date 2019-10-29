@@ -56,7 +56,6 @@ public class ModelTest extends ModelBase
         this.BackRightLeg.render(f5);
     }
 
-    @SuppressWarnings("unused")
 	private void setRotation(ModelRenderer model, float x, float y, float z)
     {
     	model.rotateAngleX = x;

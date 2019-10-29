@@ -7,15 +7,15 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiCandyCaneGen extends GuiContainer
+public class GuiGlowstoneGenerator extends GuiContainer
 {
-	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/gui/candy_cane_gen.png");
+	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/gui/glowstone_generator.png");
 	private final InventoryPlayer player;
-	private final TileEntityCandyCaneGen tileentity;
+	private final TileEntityGlowstoneGenerator tileentity;
 	
-	public GuiCandyCaneGen(InventoryPlayer player, TileEntityCandyCaneGen tileentity) 
+	public GuiGlowstoneGenerator(InventoryPlayer player, TileEntityGlowstoneGenerator tileentity) 
 	{
-		super(new ContainerCandyCaneGen(player, tileentity));
+		super(new ContainerGlowstoneGenerator(player, tileentity));
 		this.player = player;
 		this.tileentity = tileentity;
 	}

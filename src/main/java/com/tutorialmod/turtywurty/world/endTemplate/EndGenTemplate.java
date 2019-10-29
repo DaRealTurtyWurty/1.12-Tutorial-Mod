@@ -45,9 +45,7 @@ public class EndGenTemplate implements IChunkGenerator
 	    private final Random rand;
 	    private final World world;
 	    private final boolean mapFeaturesEnabled;
-	    @SuppressWarnings("unused")
 		private final BlockPos spawnPoint;
-	    @SuppressWarnings("unused")
 		private Biome[] biomesForGeneration;
 	    private int chunkX = 0, chunkZ = 0;
 	    

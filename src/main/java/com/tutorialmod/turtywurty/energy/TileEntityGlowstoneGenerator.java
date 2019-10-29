@@ -1,9 +1,7 @@
 package com.tutorialmod.turtywurty.energy;
 
-import com.tutorialmod.turtywurty.init.BlockInit;
-
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -16,12 +14,11 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TileEntityCandyCaneGen extends TileEntity implements ITickable
+public class TileEntityGlowstoneGenerator extends TileEntity implements ITickable
 {
 	public ItemStackHandler handler = new ItemStackHandler(1);
 	private CustomEnergyStorage storage = new CustomEnergyStorage(100000, 0, 20);
 	public int energy = storage.getEnergyStored();
-	@SuppressWarnings("unused")
 	private String customName;
 	public int cookTime;
 	
@@ -47,11 +44,10 @@ public class TileEntityCandyCaneGen extends TileEntity implements ITickable
 	
 	private int getFuelValue(ItemStack stack) 
 	{
-		if(stack.getItem() == Item.getItemFromBlock(BlockInit.CANDY_CANE)) return 1000;
+		if(stack.getItem() == Items.GLOWSTONE_DUST) return 1000;
 		else return 0;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) 
 	{
@@ -94,7 +90,7 @@ public class TileEntityCandyCaneGen extends TileEntity implements ITickable
 	@Override
 	public ITextComponent getDisplayName()
 	{
-		return new TextComponentTranslation("container.candy_cane_gen");
+		return new TextComponentTranslation("container.glowstone_generator");
 	}
 	
 	public int getEnergyStored()
@@ -134,7 +130,5 @@ public class TileEntityCandyCaneGen extends TileEntity implements ITickable
 	public boolean isUsableByPlayer(EntityPlayer player) 
 	{
 		return this.world.getTileEntity(this.pos) != this ? false : player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
-	}	
-	
-	
+	}		
 }

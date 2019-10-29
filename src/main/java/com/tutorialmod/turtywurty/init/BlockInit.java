@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tutorialmod.turtywurty.TutorialMod;
-import com.tutorialmod.turtywurty.energy.BlockCandyCaneGenerator;
+import com.tutorialmod.turtywurty.energy.BlockGlowstoneGenerator;
 import com.tutorialmod.turtywurty.objects.blocks.BlockBase;
 import com.tutorialmod.turtywurty.objects.blocks.BlockHoney;
 import com.tutorialmod.turtywurty.objects.blocks.BlockSilverButton;
@@ -54,7 +54,7 @@ public class BlockInit
 	public static final Block TEST_FARMLAND = new BlockTestFarmland("test_farmland");
 	//public static final Block TEST_GRASS_PATH = new BlockTestGrassPath("test_grass_path");
 	public static final Block HONEY_BLOCK = new BlockHoney("honey_block");
-	public static final Block CANDY_CANE_GEN = new BlockCandyCaneGenerator("candy_cane_generator", Material.IRON);
+	public static final Block GLOWSTONE_GENERATOR = new BlockGlowstoneGenerator("candy_cane_generator").setCreativeTab(TutorialMod.TUTORIALMODTAB);;
 	
 	//Fluids
 	public static final Block WHITE_WATER_FLUID = new BlockWhiteWaterFluid("white_water", FluidInit.WHITE_WATER_FLUID, Material.WATER);

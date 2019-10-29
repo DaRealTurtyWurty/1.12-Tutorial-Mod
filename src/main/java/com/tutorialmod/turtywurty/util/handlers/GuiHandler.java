@@ -1,8 +1,8 @@
 package com.tutorialmod.turtywurty.util.handlers;
 
-import com.tutorialmod.turtywurty.energy.ContainerCandyCaneGen;
-import com.tutorialmod.turtywurty.energy.GuiCandyCaneGen;
-import com.tutorialmod.turtywurty.energy.TileEntityCandyCaneGen;
+import com.tutorialmod.turtywurty.energy.ContainerGlowstoneGenerator;
+import com.tutorialmod.turtywurty.energy.GuiGlowstoneGenerator;
+import com.tutorialmod.turtywurty.energy.TileEntityGlowstoneGenerator;
 import com.tutorialmod.turtywurty.objects.blocks.silver_chest.ContainerSilverChest;
 import com.tutorialmod.turtywurty.objects.blocks.silver_chest.GuiSilverChest;
 import com.tutorialmod.turtywurty.objects.blocks.silver_chest.TileEntitySilverChest;
@@ -40,9 +40,9 @@ public class GuiHandler implements IGuiHandler
 			return new ContainerSilverFurnace(player.inventory, (TileEntitySilverFurnace)world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
-		if(ID == ConfigHandler.GUI_CANDY_CANE_GEN)
+		if(ID == ConfigHandler.GUI_GLOWSTONE_GENERATOR) 
 		{
-			return new ContainerCandyCaneGen(player.inventory, (TileEntityCandyCaneGen)world.getTileEntity(new BlockPos(x, y, z)));
+			return new ContainerGlowstoneGenerator(player.inventory, (TileEntityGlowstoneGenerator)world.getTileEntity(new BlockPos(x,y,z)));
 		}
 		return null;
 	}
@@ -66,9 +66,9 @@ public class GuiHandler implements IGuiHandler
 			return new GuiSilverFurnace(player.inventory, (TileEntitySilverFurnace)world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
-		if(ID == ConfigHandler.GUI_CANDY_CANE_GEN)
+		if(ID == ConfigHandler.GUI_GLOWSTONE_GENERATOR) 
 		{
-			return new GuiCandyCaneGen(player.inventory, (TileEntityCandyCaneGen)world.getTileEntity(new BlockPos(x, y, z)));
+			return new GuiGlowstoneGenerator(player.inventory, (TileEntityGlowstoneGenerator)world.getTileEntity(new BlockPos(x,y,z)));
 		}
 		return null;
 	}

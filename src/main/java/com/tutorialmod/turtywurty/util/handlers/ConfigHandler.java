@@ -16,7 +16,7 @@ public class ConfigHandler
 	public static int GUI_SILVER_CHEST = 2;
 	public static int GUI_SILVER_CHEST_NA = 3;
 	public static int GUI_SILVER_FURNACE = 4;
-	public static int GUI_CANDY_CANE_GEN = 5;
+	public static int GUI_GLOWSTONE_GENERATOR = 5;
 	
 	//Entities
 	public static int ENTITY_TEST = 250;
@@ -42,7 +42,7 @@ public class ConfigHandler
 		GUI_SILVER_CHEST = config.getInt("GUI Silver Chest", category, 2, 0, 500, "GUI ID for the Silver Chest");
 		GUI_SILVER_CHEST_NA = config.getInt("GUI Silver Chest(No Animation)", category, 3, 0, 500, "GUI ID for the Silver Chest(No Animation)");
 		GUI_SILVER_FURNACE = config.getInt("GUI Silver Furnace", category, 4, 0, 500, "GUI ID for the Silver Furnace");
-		GUI_CANDY_CANE_GEN = config.getInt("GUI Candy Cane Generator", category, 5, 0, 500, "GUI ID for the Candy Cane Generator");
+		GUI_GLOWSTONE_GENERATOR = config.getInt("GUI Candy Cane Generator", category, 5, 0, 500, "GUI ID for the Candy Cane Generator");
 		
 		category = "Entity IDs";
 		config.addCustomCategoryComment(category, "Set IDs for each Entity.");
