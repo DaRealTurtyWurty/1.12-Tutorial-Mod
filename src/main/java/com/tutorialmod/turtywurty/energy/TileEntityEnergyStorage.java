@@ -1,7 +1,6 @@
 package com.tutorialmod.turtywurty.energy;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -12,7 +11,7 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class TileEntityEnergyStorage extends TileEntity implements ITickable
 {
-	private CustomEnergyStorage storage = new CustomEnergyStorage(200000);
+	private CustomEnergyStorage storage = new CustomEnergyStorage(200000, 500);
 	public int energy = storage.getEnergyStored();
 	private String customName;
 	
@@ -36,7 +35,7 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable
 		return super.getCapability(capability, facing);
 	}
 	
-	@Override
+	/*@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) 
 	{
 		super.writeToNBT(compound);
@@ -53,7 +52,7 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable
 		this.energy = compound.getInteger("GuiEnergy");
 		this.customName = compound.getString("Name");
 		this.storage.readFromNBT(compound);
-	}
+	}*/
 	
 	@Override
 	public ITextComponent getDisplayName() 

@@ -11,29 +11,61 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityGlowstoneGenerator extends TileEntity implements ITickable
 {
 	public ItemStackHandler handler = new ItemStackHandler(1);
-	private CustomEnergyStorage storage = new CustomEnergyStorage(100000, 0, 20);
-	public int energy = storage.getEnergyStored();
+	private CustomEnergyStorage energyStorage = new CustomEnergyStorage(100000, 0);
+	public int energy = energyStorage.getEnergyStored();
 	private String customName;
 	public int cookTime;
 	
 	@Override
 	public void update() 
 	{
-		if(!handler.getStackInSlot(0).isEmpty() && isItemFuel(handler.getStackInSlot(0)))
+		System.out.println("Energy Storage" + this.energyStorage.getEnergyStored());
+		this.energy = this.energyStorage.getEnergyStored();
+		System.out.println("Energy" + this.energy);
+		if(!handler.getStackInSlot(0).isEmpty() && isItemFuel(handler.getStackInSlot(0)) && !(this.getEnergyStored() >= 100000))
 		{
 			cookTime++;
 			if(cookTime == 25)
 			{
-				energy += getFuelValue(handler.getStackInSlot(0));
+				this.energyStorage.generateEnergy(getFuelValue(handler.getStackInSlot(0)));
 				handler.getStackInSlot(0).shrink(1);
 				cookTime = 0;
+				this.markDirty();
 			}
+		}
+	}
+	
+	public void outputEnergy(int maxOutput)
+	{
+		if(energyStorage.getEnergyStored() > 0)
+		{
+            for(EnumFacing facing : EnumFacing.VALUES)
+            {
+                TileEntity tileEntity = world.getTileEntity(pos.offset(facing));
+
+                if(tileEntity != null && tileEntity.hasCapability(CapabilityEnergy.ENERGY, facing.getOpposite()))
+                {
+                    IEnergyStorage handler = tileEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite());
+                    if(handler != null && handler.canReceive())
+                    {
+                        int accepted = handler.receiveEnergy(maxOutput, false);
+                        energyStorage.consumeEnergy(accepted);
+
+                        if(energyStorage.getEnergyStored() <= 0)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            markDirty();
 		}
 	}
 	
@@ -44,15 +76,15 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	
 	private int getFuelValue(ItemStack stack) 
 	{
-		if(stack.getItem() == Items.GLOWSTONE_DUST) return 1000;
+		if(stack.getItem() == Items.GLOWSTONE_DUST) return 5000;
 		else return 0;
 	}
 
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) 
 	{
-		if(capability == CapabilityEnergy.ENERGY) return (T)this.storage;
-		if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return (T)this.handler;
+		if(capability == CapabilityEnergy.ENERGY) return CapabilityEnergy.ENERGY.cast(energyStorage);
+		if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(handler);
 		return super.getCapability(capability, facing);
 	}
 	
@@ -65,26 +97,22 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	}
 	
 	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound compound) 
+	public NBTTagCompound writeToNBT(NBTTagCompound compound)
 	{
 		super.writeToNBT(compound);
-		compound.setTag("Inventory", this.handler.serializeNBT());
-		compound.setInteger("CookTime", this.cookTime);
-		compound.setInteger("GuiEnergy", this.energy);
+		compound.setInteger("GUIEnergy", this.energy);
 		compound.setString("Name", getDisplayName().toString());
-		this.storage.writeToNBT(compound);
+		compound.setInteger("Energy", energyStorage.getEnergyStored());
 		return compound;
 	}
-	
+
 	@Override
-	public void readFromNBT(NBTTagCompound compound) 
+	public void readFromNBT(NBTTagCompound compound)
 	{
 		super.readFromNBT(compound);
-		this.handler.deserializeNBT(compound.getCompoundTag("Inventory"));
-		this.cookTime = compound.getInteger("CookTime");
-		this.energy = compound.getInteger("GuiEnergy");
+		this.energy = compound.getInteger("GUIEnergy");
 		this.customName = compound.getString("Name");
-		this.storage.readFromNBT(compound);
+		energyStorage.setEnergy(compound.getInteger("Energy"));
 	}
 	
 	@Override
@@ -95,12 +123,12 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	
 	public int getEnergyStored()
 	{
-		return this.energy;
+		return this.energyStorage.getEnergyStored();
 	}
-	
+
 	public int getMaxEnergyStored()
 	{
-		return this.storage.getMaxEnergyStored();
+		return this.energyStorage.getMaxEnergyStored();
 	}
 	
 	public int getField(int id)
@@ -108,7 +136,7 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 		switch(id)
 		{
 		case 0:
-			return this.energy;
+			return this.energyStorage.getEnergyStored();
 		case 1:
 			return this.cookTime;
 		default:
