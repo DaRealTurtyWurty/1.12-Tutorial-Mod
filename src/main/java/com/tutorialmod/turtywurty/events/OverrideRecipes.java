@@ -11,7 +11,6 @@ import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 public class OverrideRecipes 
 {
-	@SuppressWarnings("rawtypes")
 	@SubscribeEvent
 	public void registerRecipes(RegistryEvent.Register<IRecipe> event)
 	{
@@ -19,7 +18,6 @@ public class OverrideRecipes
 		removeRecipe(modRegistry, new ResourceLocation("minecraft:blue_wool"), Reference.MOD_ID);
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void removeRecipe(IForgeRegistryModifiable modRegistry, ResourceLocation recipe, String modID)
 	{
 		IRecipe p = (IRecipe)modRegistry.getValue(recipe);
