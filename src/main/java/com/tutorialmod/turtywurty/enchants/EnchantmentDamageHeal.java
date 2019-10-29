@@ -9,13 +9,13 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.util.ResourceLocation;
 
-public class EnchantmentReflectDamage extends Enchantment
+public class EnchantmentDamageHeal extends Enchantment
 {
-	public EnchantmentReflectDamage(Rarity rarity, EnumEnchantmentType type, EntityEquipmentSlot[] slot) 
+	public EnchantmentDamageHeal(Rarity rarityIn, EnumEnchantmentType typeIn, EntityEquipmentSlot[] slots) 
 	{
-		super(rarity, type, slot);
-		this.setName("reflect_damage");
-		this.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":reflect_damage"));
+		super(rarityIn, typeIn, slots);
+		this.setName("damage_heal");
+		this.setRegistryName(new ResourceLocation(Reference.MOD_ID + ":damage_heal"));
 		
 		EnchantmentInit.ENCHANTMENTS.add(this);
 	}
@@ -23,13 +23,13 @@ public class EnchantmentReflectDamage extends Enchantment
 	@Override
 	public int getMinEnchantability(int enchantmentLevel) 
 	{
-		return enchantmentLevel * 11;
+		return enchantmentLevel*11;
 	}
 	
 	@Override
 	public int getMaxEnchantability(int enchantmentLevel) 
 	{
-		return this.getMinEnchantability(enchantmentLevel) * 11;
+		return this.getMaxEnchantability(enchantmentLevel) * 11;
 	}
 	
 	@Override

@@ -56,6 +56,7 @@ itemGroup.tutorialmodtab=Tutorial Tab
 container.sliver_chest=Silver Chest
 container.silver_chest_na=          Silver Chest NA
 container.silver_furnace=Silver Furnace
+container.candy_cane_gen=Candy Cane Generator
 
 //Staffs
 item.large_fireball_staff.name=Large Fireball Staff
@@ -70,4 +71,4 @@ entity.magiball.name=Magiball
 generator.test=Test
 
 //Enchants
-enchantment.reflect_damage=Reflect Damage
+enchantment.damage_heal=Damage Heal

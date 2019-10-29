@@ -110,7 +110,8 @@ public class BiomeProviderCustom extends BiomeProvider
 	}
 	
 	@Override
-	public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed) {
+	public boolean areBiomesViable(int x, int z, int radius, List<Biome> allowed) 
+	{
 		IntCache.resetIntCache();
 		int i = x - radius >> 2;
 		int j = z - radius >> 2;

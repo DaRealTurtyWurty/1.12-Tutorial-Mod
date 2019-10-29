@@ -1,6 +1,5 @@
 package com.tutorialmod.turtywurty.objects.items;
 
-import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -14,7 +13,6 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
@@ -63,12 +61,6 @@ public class ItemBase extends Item
 		//ATTACK_SPEED_MODIFIER = new UUID(34798493843934L, Long.MAX_VALUE);
 		itemRand = new Random();
 		//REGISTRY = new RegistryNamespaced<ResourceLocation, Item>();;
-		
-	}
-	
-	@Override
-	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) 
-	{
 		
 	}
 	

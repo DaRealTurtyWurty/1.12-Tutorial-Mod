@@ -22,6 +22,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 public class TutorialMod 
 {
 	public static File config;
+	
 	@Instance
 	public static TutorialMod instance;
 	
