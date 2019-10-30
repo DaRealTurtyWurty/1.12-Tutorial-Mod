@@ -1,12 +1,17 @@
 package com.tutorialmod.turtywurty.energy;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
@@ -19,6 +24,7 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 {
 	public ItemStackHandler handler = new ItemStackHandler(1);
 	private CustomEnergyStorage energyStorage = new CustomEnergyStorage(100000, 0);
+	private NonNullList<ItemStack> itemStacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 	public int energy = energyStorage.getEnergyStored();
 	private String customName;
 	public int cookTime;
@@ -26,9 +32,7 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	@Override
 	public void update() 
 	{
-		System.out.println("Energy Storage" + this.energyStorage.getEnergyStored());
 		this.energy = this.energyStorage.getEnergyStored();
-		System.out.println("Energy" + this.energy);
 		if(!handler.getStackInSlot(0).isEmpty() && isItemFuel(handler.getStackInSlot(0)) && !(this.getEnergyStored() >= 100000))
 		{
 			cookTime++;
@@ -37,7 +41,7 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 				this.energyStorage.generateEnergy(getFuelValue(handler.getStackInSlot(0)));
 				handler.getStackInSlot(0).shrink(1);
 				cookTime = 0;
-				this.markDirty();
+				markDirtyClient();
 			}
 		}
 	}
@@ -65,7 +69,7 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
                     }
                 }
             }
-            markDirty();
+            markDirtyClient();
 		}
 	}
 	
@@ -97,22 +101,28 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	}
 	
 	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound compound)
-	{
-		super.writeToNBT(compound);
-		compound.setInteger("GUIEnergy", this.energy);
-		compound.setString("Name", getDisplayName().toString());
-		compound.setInteger("Energy", energyStorage.getEnergyStored());
-		return compound;
-	}
-
-	@Override
 	public void readFromNBT(NBTTagCompound compound)
 	{
 		super.readFromNBT(compound);
+		this.itemStacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
+        ItemStackHelper.loadAllItems(compound, this.itemStacks);
+        System.out.println("Items Read");
 		this.energy = compound.getInteger("GUIEnergy");
 		this.customName = compound.getString("Name");
 		energyStorage.setEnergy(compound.getInteger("Energy"));
+	}
+	
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound compound)
+	{
+		super.writeToNBT(compound);
+		compound.setTag("Inventory", this.handler.serializeNBT());
+		compound.setInteger("GUIEnergy", this.energy);
+		compound.setString("Name", getDisplayName().toString());
+		compound.setInteger("Energy", energyStorage.getEnergyStored());
+		ItemStackHelper.saveAllItems(compound, this.itemStacks);
+		System.out.println("Items Saved");
+		return compound;
 	}
 	
 	@Override
@@ -158,5 +168,34 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	public boolean isUsableByPlayer(EntityPlayer player) 
 	{
 		return this.world.getTileEntity(this.pos) != this ? false : player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
-	}		
+	}	
+	
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() 
+	{
+		return new SPacketUpdateTileEntity(this.pos, 3, this.getUpdateTag());
+	}
+	
+	@Override
+	public NBTTagCompound getUpdateTag() 
+	{
+		return this.writeToNBT(new NBTTagCompound());
+	}
+	
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) 
+	{
+		super.onDataPacket(net, pkt);
+		this.handleUpdateTag(pkt.getNbtCompound());
+	}
+	
+	public void markDirtyClient()
+	{
+		markDirty();
+		if(getWorld() != null)
+		{
+			IBlockState state = getWorld().getBlockState(getPos());
+			getWorld().notifyBlockUpdate(getPos(), state, state, 3);
+		}
+	}
 }
