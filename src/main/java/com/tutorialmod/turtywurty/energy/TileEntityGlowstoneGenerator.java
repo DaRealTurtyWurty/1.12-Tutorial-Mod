@@ -85,7 +85,7 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) 
 	{
 		if(capability == CapabilityEnergy.ENERGY) return CapabilityEnergy.ENERGY.cast(energyStorage);
-		if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(handler);
+		if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return (T)handler;
 		return super.getCapability(capability, facing);
 	}
 	

@@ -56,7 +56,7 @@ itemGroup.tutorialmodtab=Tutorial Tab
 container.sliver_chest=Silver Chest
 container.silver_chest_na=          Silver Chest NA
 container.silver_furnace=Silver Furnace
-container.candy_cane_gen=Candy Cane Generator
+container.glowstone_generator=Glowstone Generator
 
 //Staffs
 item.large_fireball_staff.name=Large Fireball Staff

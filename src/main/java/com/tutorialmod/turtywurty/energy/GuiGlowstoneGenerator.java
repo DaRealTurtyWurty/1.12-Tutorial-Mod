@@ -39,8 +39,8 @@ public class GuiGlowstoneGenerator extends GuiContainer
 		int l = this.getCookProgressScaled(24);
 		this.drawTexturedModalRect(this.guiLeft + 113, this.guiTop + 32, 176, 14, l + 1, 16);
 		
-		int k = this.getEnergyStoredScaled(75);
-		this.drawTexturedModalRect(this.guiLeft + 152, this.guiTop + 7, 176, 32, 16, 76 - k);
+		int k = this.getEnergyStoredScaled(76);
+		this.drawTexturedModalRect(this.guiLeft + 152, this.guiTop + 7, 176, 32, 16, 75 - k);
 	}
 	
 	private int getEnergyStoredScaled(int pixels)

@@ -8,7 +8,6 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
 
 public class ContainerGlowstoneGenerator extends Container
 {
@@ -20,7 +19,7 @@ public class ContainerGlowstoneGenerator extends Container
 		this.tileentity = tileentity;
 		IItemHandler handler = tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 		
-		this.addSlotToContainer(new SlotItemHandler(handler, 0, 80, 33));
+		this.addSlotToContainer(new SlotInput(handler, 0, 80, 33, tileentity));
 		
 		for(int y = 0; y < 3; y++)
 		{
@@ -94,7 +93,6 @@ public class ContainerGlowstoneGenerator extends Container
 			if(stack1.getCount() == stack.getCount()) return ItemStack.EMPTY;
 			slot.onTake(playerIn, stack1);
 		}
-		
 		return stack;
 	}	
 }
