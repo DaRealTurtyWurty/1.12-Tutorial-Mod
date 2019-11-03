@@ -3,7 +3,6 @@ package com.tutorialmod.turtywurty.energy;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -11,7 +10,6 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
@@ -24,7 +22,6 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 {
 	public ItemStackHandler handler = new ItemStackHandler(1);
 	private CustomEnergyStorage energyStorage = new CustomEnergyStorage(100000, 0);
-	private NonNullList<ItemStack> itemStacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 	public int energy = energyStorage.getEnergyStored();
 	private String customName;
 	public int cookTime;
@@ -104,9 +101,8 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	public void readFromNBT(NBTTagCompound compound)
 	{
 		super.readFromNBT(compound);
-		this.itemStacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
-        ItemStackHelper.loadAllItems(compound, this.itemStacks);
-        System.out.println("Items Read");
+		this.handler.deserializeNBT(compound.getCompoundTag("Inventory"));
+        System.out.println(this.handler.getStackInSlot(0).getDisplayName());
 		this.energy = compound.getInteger("GUIEnergy");
 		this.customName = compound.getString("Name");
 		energyStorage.setEnergy(compound.getInteger("Energy"));
@@ -117,11 +113,10 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	{
 		super.writeToNBT(compound);
 		compound.setTag("Inventory", this.handler.serializeNBT());
+		System.out.println(this.handler.getStackInSlot(0).getDisplayName());
 		compound.setInteger("GUIEnergy", this.energy);
 		compound.setString("Name", getDisplayName().toString());
 		compound.setInteger("Energy", energyStorage.getEnergyStored());
-		ItemStackHelper.saveAllItems(compound, this.itemStacks);
-		System.out.println("Items Saved");
 		return compound;
 	}
 	

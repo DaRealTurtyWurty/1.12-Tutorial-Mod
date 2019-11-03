@@ -25,10 +25,10 @@ public class WorldGenOres implements IWorldGenerator
     
     private void generateOverworld(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
-        generateOre(BlockInit.SILVER_BLOCK.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 20, 50, random.nextInt(8) + 1, 45);
+        generateOreOverworld(BlockInit.SILVER_BLOCK.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 20, 50, random.nextInt(8) + 1, 45);
     }
     
-    private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) 
+    private void generateOreOverworld(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances) 
     {
         int deltaY = maxY - minY;
         
