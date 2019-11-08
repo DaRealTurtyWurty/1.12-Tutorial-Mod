@@ -15,12 +15,12 @@ public class EntityJumpEvent
 	@SubscribeEvent
 	public static void entityJump(LivingEvent.LivingJumpEvent event)
 	{
-		System.out.println("Event Works");
+		//System.out.println("Event Works");
 		EntityLivingBase entity = event.getEntityLiving();
 		Block block = event.getEntityLiving().getEntityWorld().getBlockState(new BlockPos(entity.posX, entity.posY, entity.posZ)).getBlock();
 		if(block == BlockInit.HONEY_BLOCK)
 		{
-			System.out.println("Code Works");
+			//System.out.println("Code Works");
 			entity.jumpMovementFactor = 0.005f;
 		}
 	}

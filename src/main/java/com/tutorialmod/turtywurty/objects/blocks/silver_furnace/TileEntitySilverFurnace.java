@@ -528,6 +528,9 @@ public class TileEntitySilverFurnace extends TileEntityLockable implements ITick
                 break;
             case 3:
                 this.totalCookTime = value;
+                break;
+            default:
+            	break;
         }
     }
     

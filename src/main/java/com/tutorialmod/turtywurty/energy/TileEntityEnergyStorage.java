@@ -87,6 +87,9 @@ public class TileEntityEnergyStorage extends TileEntity implements ITickable
 		{
 		case 0:
 			this.energy = value;
+			break;
+		default:
+			break;
 		}
 	}
 	

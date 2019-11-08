@@ -43,6 +43,14 @@ public class GuiGlowstoneGenerator extends GuiContainer
 		this.drawTexturedModalRect(this.guiLeft + 152, this.guiTop + 7, 176, 32, 16, 75 - k);
 	}
 	
+	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) 
+	{
+		this.drawDefaultBackground();
+		super.drawScreen(mouseX, mouseY, partialTicks);
+		renderHoveredToolTip(mouseX, mouseY);
+	}
+	
 	private int getEnergyStoredScaled(int pixels)
 	{
 		int i = this.tileentity.getEnergyStored();

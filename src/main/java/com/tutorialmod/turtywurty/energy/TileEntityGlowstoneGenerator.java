@@ -33,7 +33,7 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 		if(!handler.getStackInSlot(0).isEmpty() && isItemFuel(handler.getStackInSlot(0)) && !(this.getEnergyStored() >= 100000))
 		{
 			cookTime++;
-			if(cookTime == 25)
+			if(cookTime >= 25)
 			{
 				this.energyStorage.generateEnergy(getFuelValue(handler.getStackInSlot(0)));
 				handler.getStackInSlot(0).shrink(1);
@@ -102,7 +102,6 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	{
 		super.readFromNBT(compound);
 		this.handler.deserializeNBT(compound.getCompoundTag("Inventory"));
-        System.out.println(this.handler.getStackInSlot(0).getDisplayName());
 		this.energy = compound.getInteger("GUIEnergy");
 		this.customName = compound.getString("Name");
 		energyStorage.setEnergy(compound.getInteger("Energy"));
@@ -113,7 +112,6 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 	{
 		super.writeToNBT(compound);
 		compound.setTag("Inventory", this.handler.serializeNBT());
-		System.out.println(this.handler.getStackInSlot(0).getDisplayName());
 		compound.setInteger("GUIEnergy", this.energy);
 		compound.setString("Name", getDisplayName().toString());
 		compound.setInteger("Energy", energyStorage.getEnergyStored());
@@ -155,8 +153,12 @@ public class TileEntityGlowstoneGenerator extends TileEntity implements ITickabl
 		{
 		case 0:
 			this.energy = value;
+			break;
 		case 1:
 			this.cookTime = value;
+			break;
+		default:
+			break;
 		}
 	}
 	
