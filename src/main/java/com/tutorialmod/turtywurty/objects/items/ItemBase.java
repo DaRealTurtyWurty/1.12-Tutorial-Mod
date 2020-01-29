@@ -22,8 +22,11 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.HorseArmorType;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
@@ -69,37 +72,57 @@ public class ItemBase extends Item
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) 
 	{
-		super.addInformation(stack, worldIn, tooltip, flagIn);
+		tooltip.add("this goes under the item");
 	}
 	
 	@Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) 
 	{
-		return super.canApplyAtEnchantingTable(stack, enchantment);
+		if(!enchantment.isCompatibleWith(Enchantments.EFFICIENCY))
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
 	public boolean canDestroyBlockInCreative(World world, BlockPos pos, ItemStack stack, EntityPlayer player) 
 	{
-		return super.canDestroyBlockInCreative(world, pos, stack, player);
+		if(!player.canBreatheUnderwater() && world.getBlockState(pos).getBlock() == Blocks.BED)
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
 	public boolean canDisableShield(ItemStack stack, ItemStack shield, EntityLivingBase entity, EntityLivingBase attacker) 
 	{
-		return super.canDisableShield(stack, shield, entity, attacker);
+		if(entity.isChild())
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
 	public boolean canHarvestBlock(IBlockState blockIn) 
 	{
-		return super.canHarvestBlock(blockIn);
+		if(blockIn.causesSuffocation())
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
 	public boolean canHarvestBlock(IBlockState state, ItemStack stack) 
 	{
-		return super.canHarvestBlock(state, stack);
+		if(state.causesSuffocation() && stack.canEditBlocks())
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
@@ -111,20 +134,28 @@ public class ItemBase extends Item
 	@Override
 	public Entity createEntity(World world, Entity location, ItemStack itemstack) 
 	{
-		return super.createEntity(world, location, itemstack);
+		if(location.getPosition().getY() > 100)
+		{
+			return new EntityCow(world);
+		}
+		return null;
 	}
 	
 	@Override
 	public boolean doesSneakBypassUse(ItemStack stack, IBlockAccess world, BlockPos pos, EntityPlayer player) 
 	{
-		return super.doesSneakBypassUse(stack, world, pos, player);
+		if(!world.getBlockState(pos).isFullBlock())
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
-	public ImmutableMap<String, ITimeValue> getAnimationParameters(ItemStack stack, World world, EntityLivingBase entity) 
+    public ImmutableMap<String, ITimeValue> getAnimationParameters(ItemStack stack, World world, EntityLivingBase entity) 
 	{
-		return super.getAnimationParameters(stack, world, entity);
-	}
+        return stack.getItem().getAnimationParameters(stack, world, entity);
+    }
 	
 	@Override
 	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default) 

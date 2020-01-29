@@ -99,6 +99,5 @@ public abstract class BlockSlabBase extends BlockSlab
 		{
 			return "default";
 		}
-		
 	}
 }

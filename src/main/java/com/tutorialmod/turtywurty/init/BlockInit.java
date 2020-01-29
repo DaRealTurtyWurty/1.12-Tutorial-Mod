@@ -54,8 +54,38 @@ public class BlockInit
 	public static final Block TEST_FARMLAND = new BlockTestFarmland("test_farmland");
 	//public static final Block TEST_GRASS_PATH = new BlockTestGrassPath("test_grass_path");
 	public static final Block HONEY_BLOCK = new BlockHoney("honey_block");
-	public static final Block GLOWSTONE_GENERATOR = new BlockGlowstoneGenerator("candy_cane_generator").setCreativeTab(TutorialMod.TUTORIALMODTAB);;
+	public static final Block GLOWSTONE_GENERATOR = new BlockGlowstoneGenerator("candy_cane_generator").setCreativeTab(TutorialMod.TUTORIALMODTAB);
 	
 	//Fluids
 	public static final Block WHITE_WATER_FLUID = new BlockWhiteWaterFluid("white_water", FluidInit.WHITE_WATER_FLUID, Material.WATER);
+
+	/*public static List<Block> getBlocks() 
+	{
+		Field[] declaredFields = BlockInit.class.getDeclaredFields();
+		List<Field> staticFields = new ArrayList<Field>();
+		List<Block> blocks = new ArrayList<Block>();
+		for (Field field : declaredFields) 
+		{
+		    if (java.lang.reflect.Modifier.isStatic(field.getModifiers())) 
+		    {
+		        staticFields.add(field);
+		    }
+		}
+		staticFields.remove(0);
+		for(String str : staticFields.toString().split("public static final net.minecraft.block.Block com.tutorialmod.turtywurty.init.BlockInit."))
+		{
+			str.replace(", ,", ",").replace("[[", "").replace("]]", "").replace("public static final net.minecraft.block.BlockSlab com.tutorialmod.turtywurty.init.BlockInit.", "");
+			for(Field f : staticFields)
+			{
+				try {
+					System.out.println(str);
+					blocks.add((Block) f.get(str.split(",")[0]));
+				} catch (IllegalArgumentException | IllegalAccessException e) {
+					
+				}
+			}
+		}
+		//System.out.println(blocks);
+		return blocks;
+	}*/
 }

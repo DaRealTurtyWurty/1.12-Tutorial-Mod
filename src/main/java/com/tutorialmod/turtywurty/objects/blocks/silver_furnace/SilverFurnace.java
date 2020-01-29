@@ -46,11 +46,20 @@ public class SilverFurnace extends BlockContainer
 		setSoundType(SoundType.STONE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		this.isBurning = isBurning;
+		particlesSound(isBurning);
 		
 		BlockInit.BLOCKS.add(this);
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 	
+	private void particlesSound(boolean isBurning) 
+	{
+		if(isBurning)
+		{
+			
+		}
+	}
+
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
 	{

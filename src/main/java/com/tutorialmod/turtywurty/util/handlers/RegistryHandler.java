@@ -65,6 +65,7 @@ public class RegistryHandler
 	@SubscribeEvent
 	public static void onBlockRegister(RegistryEvent.Register<Block> event)
 	{
+		//BlockInit.getBlocks();
 		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
 		TileEntityHandler.registerTileEntities();
 	}
