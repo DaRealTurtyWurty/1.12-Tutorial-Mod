@@ -27,6 +27,7 @@ import net.minecraft.entity.passive.HorseArmorType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
+import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
@@ -34,6 +35,7 @@ import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -47,7 +49,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.animation.ITimeValue;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 
-@SuppressWarnings("deprecation")
 public class ItemBase extends Item
 {
 	public ItemBase(String name) 
@@ -84,6 +85,8 @@ public class ItemBase extends Item
 		}
 		return false;
 	}
+	
+	
 	
 	@Override
 	public boolean canDestroyBlockInCreative(World world, BlockPos pos, ItemStack stack, EntityPlayer player) 
@@ -283,6 +286,7 @@ public class ItemBase extends Item
 		return super.getIsRepairable(toRepair, repair);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot) 
 	{
@@ -313,6 +317,7 @@ public class ItemBase extends Item
 		return super.getItemStackDisplayName(stack);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public int getItemStackLimit() 
 	{
@@ -331,6 +336,7 @@ public class ItemBase extends Item
 		return super.getItemUseAction(stack);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public int getMaxDamage() 
 	{
@@ -427,6 +433,7 @@ public class ItemBase extends Item
 		return super.getUnlocalizedNameInefficiently(stack);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean hasContainerItem() 
 	{
@@ -460,7 +467,8 @@ public class ItemBase extends Item
 	@Override
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) 
 	{
-		return super.hitEntity(stack, target, attacker);
+		target.addPotionEffect(new PotionEffect(MobEffects.POISON, 100, 2, false, true));    
+		return true;
 	}
 	
 	@Override

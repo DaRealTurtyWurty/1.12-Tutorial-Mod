@@ -1,7 +1,6 @@
 {
-   "parent": "block/cube_all",
-   "textures": 
-   {
-       "all": "tutorialmod:blocks/white_water_still"
-   }
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "tutorialmod:blocks/white_water_still"
+	}
 }
